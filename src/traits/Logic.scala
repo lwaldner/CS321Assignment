@@ -15,6 +15,6 @@ trait Logic {
 
   def getLineUp() : Tuple2[Int, Array[Suspect]]
 
-  
+
 
 }
