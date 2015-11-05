@@ -11,6 +11,7 @@ object main {
       case 'n' => false
       _ => UnknownError
   }
+  def parseGuess(guess: String): List[Suspect]{}
   def main (args: Array[String]): Unit = {
     println("Hello")
     //ask user for number of players
@@ -29,8 +30,9 @@ object main {
         //ask player if they want to guess
         print("would you like to guess? (y/n): ")
         val willGuess = scala.io.StdIn.readChar()
-        if(YesNoInput(willGuess)){
-        //get guess
+        println()
+        if(yesNoInput(willGuess)){
+        print("enter your guesses seperated by spaces: ")
         val guess = List[Suspect]()
         if (Logic.checkGuess(guess)) {
           //player wins!
