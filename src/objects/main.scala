@@ -1,12 +1,6 @@
 package objects
 
-<<<<<<< HEAD
 import classes.{Suspect, Player, Logic}
-=======
-import classes.{Suspect, Player}
-import scala.io.StdIn
-import traits.Logic
->>>>>>> e85d26191494ab2460e023f59e89a3876fd221f8
 
 /**
  * Created by lwald_000 on 10/26/2015.
