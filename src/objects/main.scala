@@ -1,12 +1,22 @@
 package objects
 
+<<<<<<< HEAD
 import classes.{Suspect, Player, Logic}
+=======
+import classes.{Suspect, Player}
+import scala.io.StdIn
+import traits.Logic
+>>>>>>> e85d26191494ab2460e023f59e89a3876fd221f8
 
 /**
  * Created by lwald_000 on 10/26/2015.
  */
 object main {
-
+  def yesNoInput (input: Any): Boolean = input match {
+      case 'y' => true
+      case 'n' => false
+      _ => UnknownError
+  }
   def main (args: Array[String]): Unit = {
     println("Hello")
     //ask user for number of players
@@ -23,6 +33,9 @@ object main {
       //print suspects and number of perps
       for (p <- players if p.isPlaying; ) {
         //ask player if they want to guess
+        print("would you like to guess? (y/n): ")
+        val willGuess = scala.io.StdIn.readChar()
+        if(YesNoInput(willGuess)){
         //get guess
         val guess = List[Suspect]()
         if (Logic.checkGuess(guess)) {
