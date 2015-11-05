@@ -5,4 +5,8 @@ package classes
  */
 class Suspect {
 
+  var isPerp : Boolean = false
+
+  def Suspect(){}
+
 }

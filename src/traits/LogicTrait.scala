@@ -13,6 +13,6 @@ trait LogicTrait {
 
   def checkGuess(guess: List[Suspect]) : Boolean
 
-  def getLineUp() : Tuple2[Int, List[Suspect]]
+  def getLineUp() : Tuple2[Int, Array[Suspect]]
 
 }
