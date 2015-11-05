@@ -10,7 +10,7 @@ import classes.Suspect
   object Logic extends LogicTrait{
 
     val r = scala.util.Random
-    var suspects : Array[Suspect] = Array.fill[Suspect](7)(new Suspect(r.nextString(4)))
+    var suspects : Array[Suspect] = Array.fill[Suspect](7)(new Suspect(r.alphanumeric.take(4).))
 
     def initalizeSuspects() : Unit = {
       val perps = getRandUnique(3, 6)
@@ -26,16 +26,16 @@ import classes.Suspect
       true
     }
 
-    def getLineUp() : Tuple2[Int, Array[Suspect]] = {
+    def getLineUp() : Tuple2[Int, Array[String]] = {
       val perps = getRandUnique(3, 6)
-      val lineUp = Array[Suspect](suspects(perps(0)), suspects(perps(1)), suspects(perps(2)))
+      val lineUp = Array[String](suspects(perps(0)).name, suspects(perps(1)).name, suspects(perps(2)).name)
       var numPerps = 0
       for (i <- perps){
         if (suspects(i).isPerp){
           numPerps+=1
         }
       }
-      new Tuple2[Int, Array[Suspect]](numPerps, lineUp)
+      new Tuple2[Int, Array[String]](numPerps, lineUp)
     }
 
     def getRandUnique(numNums : Int, range : Int) : Array[Int] = {
