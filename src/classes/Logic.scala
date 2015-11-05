@@ -9,9 +9,10 @@ import classes.Suspect
 
   object Logic extends LogicTrait{
 
-    var suspects : Array[Suspect] = Array.fill[Suspect](7)(new Suspect())
+    val r = scala.util.Random
+    var suspects : Array[Suspect] = Array.fill[Suspect](7)(new Suspect(r.nextString(4)))
 
-    def initalizePerps() : Unit = {
+    def initalizeSuspects() : Unit = {
       val perps = getRandUnique(3, 6)
       for (i <- perps){
         suspects(i).isPerp = true
@@ -38,7 +39,6 @@ import classes.Suspect
     }
 
     def getRandUnique(numNums : Int, range : Int) : Array[Int] = {
-      val r = scala.util.Random
       val output = Array.fill(numNums)(0)
       for (i <- 0 to (numNums - 1)){
         var num = r.nextInt(range)

@@ -23,7 +23,7 @@ object main {
     for (i <- 1 to numPlayers) {
       players :+ new Player
     }
-    Logic.initalizePerps()
+    Logic.initalizeSuspects()
     while (true) {
       val lineup = Logic.getLineUp()
       val numPerps = lineup._1

@@ -9,7 +9,7 @@ trait LogicTrait {
 
   var suspects: Array[Suspect]
 
-  def initalizePerps()
+  def initalizeSuspects()
 
   def checkGuess(guess: List[Suspect]) : Boolean
 
