@@ -19,7 +19,7 @@ import classes.Suspect
       }
     }
 
-    def checkGuess(guess : List[Suspect]) : Boolean = {
+    def checkGuess(guess : Array[Suspect]) : Boolean = {
       for (suspect <- guess){
         if (!suspect.isPerp) return false
       }

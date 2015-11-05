@@ -12,7 +12,13 @@ object main {
       _ => UnknownError
   }
   def parseGuess(guess: String): Unit /*List[Suspect]*/ = {
-    //List[Suspect] = null
+    val size = guess.split(",").length
+    if(size > 3){
+      UnknownError
+    }
+    val temp = guess.split(",").iterator
+    Array.fill[Suspect](temp.length)(new Suspect(temp.next()))
+
   }
 
   def main (args: Array[String]): Unit = {
@@ -35,9 +41,9 @@ object main {
         val willGuess = scala.io.StdIn.readChar()
         println()
         if (yesNoInput(willGuess)) {
-          print("enter your guesses seperated by spaces: ")
+          print("enter your guesses seperated by commas: ")
           val input = scala.io.StdIn.readLine()
-          val guess = List[Suspect]()
+          val guess = Array[Suspect]()
           if (Logic.checkGuess(guess)) {
             //player wins!
           } else {
