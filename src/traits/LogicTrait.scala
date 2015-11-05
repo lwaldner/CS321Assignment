@@ -5,7 +5,7 @@ import classes.Suspect
 /**
  * Created by lwald_000 on 10/29/2015.
  */
-trait Logic {
+trait LogicTrait {
 
   var suspects: Array[Suspect]
 
