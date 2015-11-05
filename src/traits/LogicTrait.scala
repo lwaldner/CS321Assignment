@@ -11,10 +11,8 @@ trait LogicTrait {
 
   def initalizePerps()
 
-  def checkGuess(guess: Array[Suspect]) : Boolean
+  def checkGuess(guess: List[Suspect]) : Boolean
 
-  def getLineUp() : Tuple2[Int, Array[Suspect]]
-
-
+  def getLineUp() : Tuple2[Int, List[Suspect]]
 
 }
