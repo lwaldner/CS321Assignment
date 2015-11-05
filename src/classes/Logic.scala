@@ -10,7 +10,7 @@ import classes.Suspect
   object Logic extends LogicTrait{
 
     val r = scala.util.Random
-    var suspects : Array[Suspect] = Array.fill[Suspect](7)(new Suspect(r.alphanumeric.take(4).))
+    var suspects : Array[Suspect] = Array.fill[Suspect](7)(new Suspect())
 
     def initalizeSuspects() : Unit = {
       val perps = getRandUnique(3, 6)
@@ -20,8 +20,10 @@ import classes.Suspect
     }
 
     def checkGuess(guess : Array[Suspect]) : Boolean = {
-      for (suspect <- guess){
-        if (!suspect.isPerp) return false
+      for (suspect <- suspects){
+        for (s <- guess){
+          if (s.name == suspect.name && !suspect.isPerp) false
+        }
       }
       true
     }
