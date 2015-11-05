@@ -9,9 +9,9 @@ object main {
   def yesNoInput (input: Any): Boolean = input match {
       case 'y' => true
       case 'n' => false
-      //_ => UnknownError
+      _ => UnknownError
   }
-  /*def main (args: Array[String]): Unit = {
+  def main (args: Array[String]): Unit = {
     println("Hello")
     //ask user for number of players
     val numPlayers = 3
@@ -40,12 +40,6 @@ object main {
         }
       }
     }
-  }*/
-
-  def main (args: Array[String]): Unit = {
-    Logic.initalizePerps()
-    val thing = Logic.getLineUp()
-    var 3 = 6
   }
 
 }
