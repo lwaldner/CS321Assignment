@@ -26,12 +26,13 @@ import classes.Suspect
     }
 
     def getLineUp() : Tuple2[Int, Array[Suspect]] = {
-      val r = scala.util.Random
-      def perps = getRandUnique(3, 6)
+      val perps = getRandUnique(3, 6)
       val lineUp = Array[Suspect](suspects(perps(0)), suspects(perps(1)), suspects(perps(2)))
       var numPerps = 0
       for (i <- perps){
-        if (suspects(perps(i)).isPerp) numPerps+=1
+        if (suspects(i).isPerp){
+          numPerps+=1
+        }
       }
       new Tuple2[Int, Array[Suspect]](numPerps, lineUp)
     }
