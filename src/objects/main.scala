@@ -11,7 +11,10 @@ object main {
       case 'n' => false
       _ => UnknownError
   }
-  def parseGuess(guess: String): List[Suspect]{}
+  def parseGuess(guess: String): Unit /*List[Suspect]*/ = {
+    //List[Suspect] = null
+  }
+
   def main (args: Array[String]): Unit = {
     println("Hello")
     //ask user for number of players
@@ -26,22 +29,23 @@ object main {
       val numPerps = lineup._1
       val suspects = lineup._2
       //print suspects and number of perps
-      for (p <- players if p.isPlaying; ) {
+      for (p <- players if p.isPlaying;) {
         //ask player if they want to guess
         print("would you like to guess? (y/n): ")
         val willGuess = scala.io.StdIn.readChar()
         println()
-        if(yesNoInput(willGuess)){
-        print("enter your guesses seperated by spaces: ")
-        val guess = List[Suspect]()
-        if (Logic.checkGuess(guess)) {
-          //player wins!
-        } else {
-          //player loses :(
-          p.isPlaying = false
+        if (yesNoInput(willGuess)) {
+          print("enter your guesses seperated by spaces: ")
+          val input = scala.io.StdIn.readLine()
+          val guess = List[Suspect]()
+          if (Logic.checkGuess(guess)) {
+            //player wins!
+          } else {
+            //player loses :(
+            p.isPlaying = false
+          }
         }
       }
     }
-  }
 
-}
+  }}
