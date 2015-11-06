@@ -64,14 +64,14 @@ object main {
           } else {
             println("you lost")
             p.isPlaying = false
+            var checkPlay = false
+            for (p <- players){
+              if (p.isPlaying) checkPlay = true
+            }
+            isPlaying = checkPlay
           }
         }
       }
-      var checkPlay = false
-      for (p <- players){
-        if (p.isPlaying) checkPlay = true
-      }
-      isPlaying = checkPlay
     }
   }
 }

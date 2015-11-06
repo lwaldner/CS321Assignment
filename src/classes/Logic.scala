@@ -20,12 +20,22 @@ import classes.Suspect
     }
 
     def checkGuess(guess : Array[Suspect]) : Boolean = {
-      for (suspect <- suspects){
+      val perps = suspects.filter(_.isPerp)
+      for (s <- guess) {
+        for (p <- perps) {
+          if (s.name == p.name && p.isPerp) {
+            p.isPerp = false
+          }
+        }
+      }
+      !perps.exists(_.isPerp)
+      /*for (suspect <- suspects){
         for (s <- guess){
+
           if (s.name == suspect.name && !suspect.isPerp) false
         }
       }
-      true
+      true*/
     }
 
     def getLineUp() : Tuple2[Int, Array[String]] = {
